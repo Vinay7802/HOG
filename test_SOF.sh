@@ -21,12 +21,12 @@ average_time (){
     done
 	echo $(echo "scale=5; $time / $2" | bc)
 }
->output_FAST.txt
+>output_SOF.txt
 for file in "$DIRECTORY"/*
 do
 	if [ -f "$file" ]
 	  then
 	    echo "Running test case $file..."
-		echo "test case $file t=$(average_time $file 10)s" >> output_FAST.txt
+		echo "test case $file t=$(average_time $file 10)s" >> output_SOF.txt
 	  fi
 done
